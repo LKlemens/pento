@@ -19,6 +19,7 @@
 # and so on) as they will fail if something goes wrong.
 
 alias Pento.Catalog
+alias Pento.Questions
 
 products = [
   %{
@@ -41,6 +42,18 @@ products = [
   }
 ]
 
+faqs = [
+  %{
+    question: "How to learn Elixir?",
+    answer: "Just keep coding!",
+    vote: 2,
+  }
+]
+
 Enum.each(products, fn product ->
   Catalog.create_product(product)
+end)
+
+Enum.each(faqs, fn faq ->
+  Questions.create_faq(faq)
 end)

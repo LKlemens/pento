@@ -91,7 +91,7 @@ defmodule PentoWeb.Router do
     get("/users/confirm/:token", UserConfirmationController, :confirm)
   end
 
-  scope "/", Pento do
+  scope "/", PentoWeb do
     pipe_through([:browser, :require_authenticated_user])
     live("/faqs", FAQLive.Index, :index)
     live("/faqs/new", FAQLive.Index, :new)
