@@ -2,8 +2,7 @@ defmodule Pento.Promo.Recipient do
   defstruct [:first_name, :email]
   @types %{first_name: :string, email: :string}
 
-  alias Pento.Promo.Recipient
-
+  alias __MODULE__
   import Ecto.Changeset
 
   def changeset(%Recipient{} = user, attrs) do
