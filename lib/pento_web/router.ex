@@ -100,4 +100,10 @@ defmodule PentoWeb.Router do
     live("/faqs/:id", FAQLive.Show, :show)
     live("/faqs/:id/show/edit", FAQLive.Show, :edit)
   end
+
+  scope "/", PentoWeb do
+    pipe_through([:browser, :require_authenticated_user])
+
+    live("/promo", PromoLive)
+  end
 end
